@@ -1,0 +1,17 @@
+*.pyc
+__pycache__
+.deprecated
+.vscode
+.pytest_cache
+.ipynb_checkpoints
+.coverage*
+
+
+ideas
+projects
+
+build
+dist
+
+
+node_modules
