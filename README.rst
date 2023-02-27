@@ -68,7 +68,7 @@ If you have found a bug, please open an issue on the `GitHub Issues <https://git
 Discussion
 ----------
 
-If you have questions on how to use **StreamJSME**, or if you want to give feedback or share ideas and new features, please head to the `GitHub Discussions <https://github.com/ale94mleon/moldrug/discussions>`_.
+If you have questions on how to use **StreamJSME**, or if you want to give feedback or share ideas and new features, please head to the `GitHub Discussions <https://github.com/ale94mleon/StreamJSME/discussions>`_.
 
 
 ..  |pypi-version|  image:: https://img.shields.io/pypi/v/streamjsme.svg
@@ -85,8 +85,8 @@ If you have questions on how to use **StreamJSME**, or if you want to give feedb
 ..  |jsme| image:: https://img.shields.io/static/v1?label=Powered%20by&message=JSME&color=9438ff&style=flat
     :target: https://jsme-editor.github.io/
     :alt: JSME
-..  |license| image:: https://badgen.net/pypi/license/moldrug/
-    :target: https://pypi.python.org/pypi/moldrug/
+..  |license| image:: https://badgen.net/pypi/license/streamjsme/
+    :target: https://pypi.python.org/pypi/streamjsme/
     :alt: license
 ..  |downloads| image:: https://static.pepy.tech/personalized-badge/streamjsme?period=month&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads
     :target: https://pepy.tech/project/streamjsme
