@@ -8,6 +8,8 @@ For information of TOFF:
 import os
 import streamlit.components.v1 as components
 
+_RELEASE = True
+
 # Metadata
 # We will use semantic version (major, minor, patch)
 __main_version_tuple__ = (0, 0, 1)
@@ -24,7 +26,7 @@ __email__ = "ale94mleon@gmail.com"
 
 
 
-_RELEASE = True
+
 if _RELEASE:
     root_dir = os.path.dirname(__file__)
     build_dir = os.path.join(root_dir,'frontend/build')
@@ -42,7 +44,23 @@ else:
 #     build_dir = os.path.join(parent_dir, "frontend/build")
 #     _StreamJSME = components.declare_component("my_component", path=build_dir)
 
-def StreamJSME(smiles='C', key = None):
+def StreamJSME(smiles:str = 'C', key = None) -> str:
+    """This is the main function of the component.
+    It will create an interactive drawing section and
+    output the draw molecule
+
+    Parameters
+    ----------
+    smiles : str, optional
+        A valid SMILES string of a molecule, by default 'C'
+    key : _type_, optional
+        An identification in case that multiple instance are created, by default None
+
+    Returns
+    -------
+    str
+        The SMILES of the draw molecule
+    """
     smiles = _StreamJSME(
         smiles = smiles,
         key = key,
@@ -50,6 +68,28 @@ def StreamJSME(smiles='C', key = None):
         )
     return smiles
 
-if not _RELEASE:
-    s = StreamJSME()
+if _RELEASE:
+    import streamlit as st
+    st.info("To see the example set `_RELEASE = False` at the top of the script and be sure that you install (`npm install`) and and start (`npm start`) your frontend")
+else:
+    from rdkit import Chem
+    from rdkit.Chem import Descriptors
+    from rdkit.Chem import Draw
+    from io import BytesIO
+    import streamlit as st
+    st.title('✍️ molecules with JSME in Streamlit 🤩')
+    # Create a first plot with an input SMILES, by default smiles = 'C'
+    update_smiles = StreamJSME(smiles='CCC')
+
+    st.subheader('Using the draw molecule inside RDKit')
+    st.write(f"New SMILES = {update_smiles}")
+    mol = Chem.MolFromSmiles(update_smiles)
+    st.write(f"MolLogP = {Descriptors.MolLogP(mol)}\n\nTPSA = {Descriptors.TPSA(mol)}")
+
+    st.subheader('Getting the RDKit image')
+    img = Draw.MolToImage(mol)
+    bio = BytesIO()
+    img.save(bio, format='png')
+    st.image(img)
+
 
