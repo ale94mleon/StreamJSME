@@ -52,28 +52,28 @@ def StreamJSME(smiles:str = 'C', key = None) -> str:
         )
     return smiles
 
-if _RELEASE:
-    import streamlit as st
-    st.info("To see the example set `_RELEASE = False` at the top of the script and be sure that you install (`npm install`) and and start (`npm start`) your frontend")
-else:
-    from rdkit import Chem
-    from rdkit.Chem import Descriptors
-    from rdkit.Chem import Draw
-    from io import BytesIO
-    import streamlit as st
-    st.title('✍️ molecules with JSME in Streamlit 🤩')
-    # Create a first plot with an input SMILES, by default smiles = 'C'
-    update_smiles = StreamJSME(smiles='CCC')
+def example():
+    if _RELEASE:
+        print("To see the example set `_RELEASE = False` at the top of the script and be sure that you install (`npm install`) and and start (`npm start`) your frontend")
+    else:
+        from rdkit import Chem
+        from rdkit.Chem import Descriptors
+        from rdkit.Chem import Draw
+        from io import BytesIO
+        import streamlit as st
+        st.title('✍️ molecules with JSME in Streamlit 🤩')
+        # Create a first plot with an input SMILES, by default smiles = 'C'
+        update_smiles = StreamJSME(smiles='CCC')
 
-    st.subheader('Using the draw molecule inside RDKit')
-    st.write(f"New SMILES = {update_smiles}")
-    mol = Chem.MolFromSmiles(update_smiles)
-    st.write(f"MolLogP = {Descriptors.MolLogP(mol)}\n\nTPSA = {Descriptors.TPSA(mol)}")
+        st.subheader('Using the draw molecule inside RDKit')
+        st.write(f"New SMILES = {update_smiles}")
+        mol = Chem.MolFromSmiles(update_smiles)
+        st.write(f"MolLogP = {Descriptors.MolLogP(mol)}\n\nTPSA = {Descriptors.TPSA(mol)}")
 
-    st.subheader('Getting the RDKit image')
-    img = Draw.MolToImage(mol)
-    bio = BytesIO()
-    img.save(bio, format='png')
-    st.image(img)
+        st.subheader('Getting the RDKit image')
+        img = Draw.MolToImage(mol)
+        bio = BytesIO()
+        img.save(bio, format='png')
+        st.image(img)
 
 
