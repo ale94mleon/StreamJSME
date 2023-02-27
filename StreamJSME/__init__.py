@@ -1,7 +1,17 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+For information of TOFF:
+    Docs: https://StreamJSME.readthedocs.io/en/latest/
+    Source Code: https://github.com/ale94mleon/StreamJSME
+"""
+from ._version import __version__, __version_tuple__
 import os
 import streamlit.components.v1 as components
+__author__ = "Alejandro Martínez León"
+__email__ = "ale94mleon@gmail.com"
 
-_RELEASE = False
+_RELEASE = True
 
 
 
@@ -17,20 +27,19 @@ else:
             "StreamJSME",
             url = 'http://localhost:3001'
             )
+# else:
+#     parent_dir = os.path.dirname(os.path.abspath(__file__))
+#     build_dir = os.path.join(parent_dir, "frontend/build")
+#     _StreamJSME = components.declare_component("my_component", path=build_dir)
 
 def StreamJSME(smiles='C', key = None):
-    response = _StreamJSME(
+    smiles = _StreamJSME(
         smiles = smiles,
         key = key,
-        default = {
-            'data':{
-                'smiles':'C'
-                }
-            }
+        default = 'C'
         )
-    smiles = response['data']['smiles']
     return smiles
 
 
-StreamJSME()
+s = StreamJSME()
 

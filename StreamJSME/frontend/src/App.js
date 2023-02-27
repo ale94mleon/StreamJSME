@@ -18,7 +18,7 @@ export class App extends StreamlitComponentBase {
 
   logSmiles(smiles) {
     console.log(smiles);
-    Streamlit.setComponentValue({ data: { smiles: smiles } });
+    Streamlit.setComponentValue(smiles);
   }
 
   render() {
@@ -39,3 +39,4 @@ export class App extends StreamlitComponentBase {
 }
 
 export default withStreamlitConnection(App);
+
