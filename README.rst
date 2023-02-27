@@ -53,6 +53,13 @@ Use
     img.save(bio, format='png')
     st.image(img)
 
+If trying to run the Streamlit application you get ``OSError: [Errno 28] inotify watch limit reached``,
+just use the flag ``--server.fileWatcherType none``:
+
+.. code-block:: bash
+
+    streamlit run app.py --server.fileWatcherType none
+
 Issues
 ------
 
