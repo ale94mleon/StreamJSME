@@ -5,7 +5,7 @@ For information of TOFF:
     Docs: https://StreamJSME.readthedocs.io/en/latest/
     Source Code: https://github.com/ale94mleon/StreamJSME
 """
-from ._version import __version__, __version_tuple__
+from _version import __version__, __version_tuple__
 import os
 import streamlit.components.v1 as components
 __author__ = "Alejandro Martínez León"
@@ -40,6 +40,6 @@ def StreamJSME(smiles='C', key = None):
         )
     return smiles
 
-
-s = StreamJSME()
+if not _RELEASE:
+    s = StreamJSME()
 
