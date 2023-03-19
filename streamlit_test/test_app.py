@@ -41,6 +41,12 @@ mol = Chem.MolFromSmiles(update_smiles)
 st.write(f"MolLogP = {Descriptors.MolLogP(mol)}")
 st.write(f"TPSA = {Descriptors.TPSA(mol)}")
 
+with st.expander('You can even retrieve the highlighted atoms on RDKit'):
+    selected_atoms = [atom for atom in mol.GetAtoms() if atom.GetAtomMapNum() == 1]
+    st.write(f'**Number of highlighted atoms**: {len(selected_atoms)}')
+    for atom in selected_atoms:
+        st.write(f"**Atom**: {atom.GetSymbol()}{atom.GetIdx()}")
+
 st.subheader('Getting the RDKit image')
 img = Draw.MolToImage(mol)
 bio = BytesIO()
@@ -61,6 +67,12 @@ st.write(f"New SMILES = {update_smiles}")
 mol = Chem.MolFromSmiles(update_smiles)
 st.write(f"MolLogP = {Descriptors.MolLogP(mol)}")
 st.write(f"TPSA = {Descriptors.TPSA(mol)}")
+
+with st.expander('You can even retrieve the highlighted atoms on RDKit'):
+    selected_atoms = [atom for atom in mol.GetAtoms() if atom.GetAtomMapNum() == 1]
+    st.write(f'**Number of highlighted atoms**: {len(selected_atoms)}')
+    for atom in selected_atoms:
+        st.write(f"**Atom**: {atom.GetSymbol()}{atom.GetIdx()}")
 
 st.subheader('Getting the RDKit image')
 img = Draw.MolToImage(mol)
