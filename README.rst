@@ -1,6 +1,8 @@
 StreamJSME
 ==========
 
+⚠️Frontend brocken⚠️
+
 This package is intended to be used as a Molecule Draw component on `Streamlit <https://streamlit.io/>`_ applications. It uses `jsme-react <https://github.com/DouglasConnect/jsme-react>`_.
 It _was inspired by `chemstreamlit_js <https://github.com/iwatobipen/chem_streamlit/tree/main/chemstreamlit_js>`_; so, the credit all to them.
 
