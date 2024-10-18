@@ -1,8 +1,8 @@
 StreamJSME
 ==========
 
-This package is intend to be used as Molecule Draw component on `Streamlit <https://streamlit.io/>`_ applications. It use `jsme-react <https://github.com/DouglasConnect/jsme-react>`_.
-It was inspired on `chemstreamlit_js <https://github.com/iwatobipen/chem_streamlit/tree/main/chemstreamlit_js>`_; so, the credits all to them.
+This package is intended to be used as a Molecule Draw component on `Streamlit <https://streamlit.io/>`_ applications. It uses `jsme-react <https://github.com/DouglasConnect/jsme-react>`_.
+It _was inspired by `chemstreamlit_js <https://github.com/iwatobipen/chem_streamlit/tree/main/chemstreamlit_js>`_; so, the credit all to them.
 
 .. list-table::
     :widths: 12 35
