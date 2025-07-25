@@ -3,7 +3,6 @@ StreamJSME
 ⚠️Frontend brocken⚠️
 
 This package is intended to be used as a Molecule Draw component on `Streamlit <https://streamlit.io/>`_ applications. It uses `jsme-react <https://github.com/DouglasConnect/jsme-react>`_.
-It _was inspired by `chemstreamlit_js <https://github.com/iwatobipen/chem_streamlit/tree/main/chemstreamlit_js>`_; so, the credit all to them.
 
 .. list-table::
     :widths: 12 35
@@ -70,6 +69,10 @@ Discussion
 ----------
 
 If you have questions on how to use **StreamJSME**, or if you want to give feedback or share ideas and new features, please head to the `GitHub Discussions <https://github.com/ale94mleon/StreamJSME/discussions>`_.
+
+Acknowledgment
+--------------
+See the full list of contributors in the `CONTRIBUTORS.md <./CONTRIBUTORS.md>`_ file.
 
 
 ..  |pypi-version|  image:: https://img.shields.io/pypi/v/streamjsme.svg
