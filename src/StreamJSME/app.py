@@ -15,7 +15,7 @@ _RELEASE = True
 
 if _RELEASE:
     root_dir = os.path.dirname(__file__)
-    build_dir = os.path.join(root_dir, "frontend/build")
+    build_dir = os.path.join(root_dir, "static")
     _StreamJSME = components.declare_component("StreamJSME", path=build_dir)
 else:
     _StreamJSME = components.declare_component(
@@ -23,7 +23,7 @@ else:
     )
 # else:
 #     parent_dir = os.path.dirname(os.path.abspath(__file__))
-#     build_dir = os.path.join(parent_dir, "frontend/build")
+#     build_dir = os.path.join(parent_dir, "static")
 #     _StreamJSME = components.declare_component("my_component", path=build_dir)
 
 

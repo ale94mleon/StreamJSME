@@ -1,2 +1,0 @@
-include LICENSE README.rst CODE-OF-CONDUCT.md
-recursive-include StreamJSME/frontend/build *

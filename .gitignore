@@ -17,3 +17,6 @@ dist
 
 
 node_modules
+.DS_Store
+src/StreamJSME/_version.py
+src/StreamJSME/static
