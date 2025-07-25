@@ -1,37 +1,5 @@
 StreamJSME
 ==========
-Readme for forked version
--------------------------
-This is a modified version of `@ale94mleon/StreamJSME <github.com/ale94mleon/StreamJSME>`_ to make it compatible with the newer Streamlit (1.41.1). I really thank @ale94mleon for the original work.
-
-Changes:
-
-- Uses `@loschmidt/jsme-react <https://github.com/loschmidt/jsme-react/>`_ instead of `@DouglasConnect/jsme-react <https://github.com/DouglasConnect/jsme-react/>`_ for React > 18 compatibility.
-- Codebase is in TypeScript. (Thank you Copilot!)
-- Compatible Python version bumped to 3.13+. (I guess it should work...)
-
-Usage are the same, some features added as arguments of ``StreamJSME()``:
-
-- ``width``, ``height``, ``margin``: to control the size of the JSME editor.
-- ``src``: to specify the source URL (``jsme.nocache.js``) of the JSME editor. As default `official JSME site <https://jsme-editor.github.io/>`_ is used.
-
-Installation example (because this is not published on PyPI):
-
-.. code-block:: bash
-
-   git clone https://github.com/ys-clarry/StreamJSME
-   cd StreamJSME/frontend
-   npm install
-   npm run build
-   cd ../..
-   # Option 1
-   pip install -e . 
-   # Option 2
-   pip install build; python -m build
-   cd dist; pip install StreamJSME-0.0.3-py3-none-any.whl
-
-Original README
--------------------------
 ⚠️Frontend brocken⚠️
 
 This package is intended to be used as a Molecule Draw component on `Streamlit <https://streamlit.io/>`_ applications. It uses `jsme-react <https://github.com/DouglasConnect/jsme-react>`_.
