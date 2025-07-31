@@ -36,16 +36,16 @@ st.title('✍️ molecules with JSME in Streamlit')
 update_smiles = StreamJSME(smiles='CCC')
 
 st.subheader('Using the draw molecule inside RDKit')
-st.write(f"New SMILES = {update_smiles}")
+st.markdown(f"New SMILES = {update_smiles}")
 mol = Chem.MolFromSmiles(update_smiles)
-st.write(f"MolLogP = {Descriptors.MolLogP(mol)}")
-st.write(f"TPSA = {Descriptors.TPSA(mol)}")
+st.markdown(f"MolLogP = {Descriptors.MolLogP(mol)}")
+st.markdown(f"TPSA = {Descriptors.TPSA(mol)}")
 
 with st.expander('You can even retrieve the highlighted atoms on RDKit'):
     selected_atoms = [atom for atom in mol.GetAtoms() if atom.GetAtomMapNum() == 1]
-    st.write(f'**Number of highlighted atoms**: {len(selected_atoms)}')
+    st.markdown(f'**Number of highlighted atoms**: {len(selected_atoms)}')
     for atom in selected_atoms:
-        st.write(f"**Atom**: {atom.GetSymbol()}{atom.GetIdx()}")
+        st.markdown(f"**Atom**: {atom.GetSymbol()}{atom.GetIdx()}")
 
 st.subheader('Getting the RDKit image')
 img = Draw.MolToImage(mol)
@@ -57,22 +57,20 @@ st.image(img)
 Check [StreamJSME GitHub Repo](https://github.com/ale94mleon/StreamJSME).
 """)
 
-
-
 # Create a first plot with an input SMILES, by default smiles = 'C'
 update_smiles = StreamJSME(smiles='CCC')
 
 st.subheader('Using the draw molecule inside RDKit')
-st.write(f"New SMILES = {update_smiles}")
+st.markdown(f"New SMILES = {update_smiles}")
 mol = Chem.MolFromSmiles(update_smiles)
-st.write(f"MolLogP = {Descriptors.MolLogP(mol)}")
-st.write(f"TPSA = {Descriptors.TPSA(mol)}")
+st.markdown(f"MolLogP = {Descriptors.MolLogP(mol)}")
+st.markdown(f"TPSA = {Descriptors.TPSA(mol)}")
 
 with st.expander('You can even retrieve the highlighted atoms on RDKit'):
     selected_atoms = [atom for atom in mol.GetAtoms() if atom.GetAtomMapNum() == 1]
-    st.write(f'**Number of highlighted atoms**: {len(selected_atoms)}')
+    st.markdown(f'**Number of highlighted atoms**: {len(selected_atoms)}')
     for atom in selected_atoms:
-        st.write(f"**Atom**: {atom.GetSymbol()}{atom.GetIdx()}")
+        st.markdown(f"**Atom**: {atom.GetSymbol()}{atom.GetIdx()}")
 
 st.subheader('Getting the RDKit image')
 img = Draw.MolToImage(mol)
