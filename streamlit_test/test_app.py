@@ -58,7 +58,7 @@ Check [StreamJSME GitHub Repo](https://github.com/ale94mleon/StreamJSME).
 """)
 
 # Create a first plot with an input SMILES, by default smiles = 'C'
-update_smiles = StreamJSME(smiles='CCC')
+update_smiles = StreamJSME(smiles='CCC', options="oldlook,star,query")
 
 st.subheader('Using the draw molecule inside RDKit')
 st.markdown(f"New SMILES = {update_smiles}")

@@ -23,10 +23,11 @@ interface PythonArgs {
   width: number
   margin: number
   src?: string
+  options?: string
 }
 
 function App({ args, disabled, theme }: ComponentProps): React.ReactElement {
-  const { smiles, height, width, margin, src }: PythonArgs = args
+  const { smiles, height, width, margin, src, options }: PythonArgs = args
   const isFocused = useState(false)
 
   // Callback for molecule change
@@ -53,7 +54,7 @@ function App({ args, disabled, theme }: ComponentProps): React.ReactElement {
         height={height}
         width={width}
         smiles={smiles}
-        options="oldlook, star"
+        options={options || "oldlook,star"}
         onChange={handleChange}
         disabled={disabled}
       />

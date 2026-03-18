@@ -33,6 +33,7 @@ def StreamJSME(
     width: int = 500,
     margin: int = 50,
     src=None,
+    options: str = "oldlook,star",
     key=None,
 ) -> str:
     """This is the main function of the component.
@@ -52,6 +53,13 @@ def StreamJSME(
     src : str, optional
         The source of the JSME editor, by default None
         If None, it will use the default JSME on github.io
+    options : str, optional
+        Comma-separated string to customize JSME behavior. Common options include:
+            - 'oldlook' : Classic toolbar appearance
+            - 'star' : Adds extra toolbar features
+            - 'hydrogens' : Show all hydrogen atoms explicitly
+            - 'query' : Enable substructure query mode for advanced searches
+        Multiple options can be combined, e.g., "query,hydrogens,oldlook".
     key : _type_, optional
         An identification in case that multiple instance are created, by default None
 
@@ -72,6 +80,7 @@ def StreamJSME(
         margin=margin,
         src=src,
         key=key,
+        options=options,
         default="C",
     )
     return smiles
